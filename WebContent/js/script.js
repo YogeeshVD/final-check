@@ -19,7 +19,7 @@ function validate() {
 		 true;
 		}
 		
-		if(/[^0-9\-\\/\/]/.test(dol)) {
+		if(/[^0-9/]/.test(dol)) {
 			alert("Date is to be a number");
 			return false;
 		} else {
