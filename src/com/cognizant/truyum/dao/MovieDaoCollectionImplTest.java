@@ -26,7 +26,7 @@ public class MovieDaoCollectionImplTest {
 	}
 
 	public static void testGetMovieListAdmin() throws ParseException {
-		MovieDaoCollectionImpl movieDao = new MovieDaoCollectionImpl();
+		MovieDao movieDao = new MovieDaoCollectionImpl();
 
 		List<Movie> movie = movieDao.getMovieListAdmin();
 		for (Movie x : movie) {

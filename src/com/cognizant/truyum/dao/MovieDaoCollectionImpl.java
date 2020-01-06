@@ -8,7 +8,7 @@ import java.util.List;
 import com.cognizant.truyum.model.Movie;
 import com.cognizant.truyum.util.DateUtil;
 
-public class MovieDaoCollectionImpl {
+public class MovieDaoCollectionImpl implements MovieDao {
 	private static List<Movie> movieList;
 
 	public MovieDaoCollectionImpl() throws ParseException {
@@ -28,12 +28,12 @@ public class MovieDaoCollectionImpl {
 
 	}
 
-	List<Movie> getMovieListAdmin() {
+	public List<Movie> getMovieListAdmin() {
 		return movieList;
 
 	}
 
-	List<Movie> getMovieListCustomer() {
+	public List<Movie> getMovieListCustomer() {
 		List<Movie> movie = new ArrayList<Movie>();
 		Date today = new Date();
 		for (Movie x : movieList) {
@@ -55,7 +55,7 @@ public class MovieDaoCollectionImpl {
 
 	}
 
-	Movie getMovie(long id) {
+	public Movie getMovie(long id) {
 		Movie movie = null;
 		for (Movie x : movieList) {
 			if (x.getId() == id) {
@@ -63,6 +63,11 @@ public class MovieDaoCollectionImpl {
 			}
 		}
 		return movie;
+	}
+
+	public void removeFavouriteItem(int i, long movieId) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

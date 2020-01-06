@@ -24,9 +24,9 @@ public class FavouriteDaoCollectionImplTest {
 
 	public static void testAddFavouriteItem() throws ParseException {
 		FavouriteDaoCollectionImpl favouriteDao = new FavouriteDaoCollectionImpl();
-		favouriteDao.addFavouriteItem(1, 2);
-		favouriteDao.addFavouriteItem(1, 3);
-		favouriteDao.addFavouriteItem(1, 4);
+		favouriteDao.addfavouriteItem(1, 2);
+		favouriteDao.addfavouriteItem(1, 3);
+		favouriteDao.addfavouriteItem(1, 4);
 
 
 	}
@@ -45,7 +45,7 @@ public class FavouriteDaoCollectionImplTest {
 
 	}
 
-	public static void testRemoveFavouriteItem() {
+	public static void testRemoveFavouriteItem() throws FavouriteEmptyException {
 		FavouriteDaoCollectionImpl favouriteDao = new FavouriteDaoCollectionImpl();
 		favouriteDao.removeFavouriteItem(1, 4);
 	}
