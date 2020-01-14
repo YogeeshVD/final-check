@@ -12,7 +12,7 @@ values
 
 -- -------------------------------------------------------------------------------------------
 -- View Movie List Admin
-select * from movie ;
+select mv_title as Title, mv_box_office as Box_Office, mv_active as Active, mv_date_of_launch as Date_Of_Launch, mv_genre as Genre, mv_has_teaser as Has_Teaser  from movie ;
 
 -- -------------------------------------------------------------------------------------------
 -- Edit Movie
@@ -23,12 +23,12 @@ where mv_id = 2 ;
 -- ----------------------------------------------------------------------------------------------
 -- Edited Movie 
 
-select * from movie where mv_id = 2 ;
+select mv_title as Title , mv_box_office as Box_Office, mv_active as Active, mv_date_of_launch as Date_Of_Launch, mv_genre as Genre, mv_has_teaser as Has_Teaser from movie where mv_id = 2 ;
 
 -- ---------------------------------------------------------------------------------------------------------------------------
 -- Movie List Admin after edit
  
- select * from movie ;
+select mv_title as Title, mv_box_office as Box_Office, mv_active as Active, mv_date_of_launch as Date_Of_Launch, mv_genre as Genre, mv_has_teaser as Has_Teaser  from movie ;
  
  -- -----------------------------------------------------------------------------------------------------
  -- -----------------------------------------------------------------------------------------------------
@@ -44,13 +44,13 @@ values (1, 'Sandy'),
 -- -------------------------------------------------------------------------------------------------------
 -- view users
  
- select * from user ;
+ select us_id as Id, us_name as Name from user ;
  
  -- -------------------------------------------------------------------------------------------------------
  
  -- Movie List Customer ( user movie list)
 
-select mv_title, mv_box_office, mv_genre, mv_has_teaser from movie where mv_active = 'Yes' and  mv_date_of_launch < current_date() ; 
+select mv_title as Title, mv_box_office as Box_Office, mv_genre as Genre, mv_has_teaser as Has_Teaser from movie where mv_active = 'Yes' and  mv_date_of_launch < current_date() ; 
 
 -- ------------------------------------------------------------------------------------------------------------------------
 
@@ -68,14 +68,14 @@ values (1,1,1),
  -- -------------------------------------------------------------------------------------------------------------------------
  -- View Favourite Movie list
  
- select m.mv_title, m.mv_box_office, m.mv_genre from movie m
+ select m.mv_title as Title, m.mv_box_office as Box_Office, m.mv_genre as Genre from movie m
  join favorite f 
- on m.mv_id = f.fv_mv_id ;
+ on m.mv_id = f.fv_mv_id where fv_us_id = 1  ;
  
 -- ---------------------------------------------------------------------------------------------------------------------
 -- delete favourite movie
 
-delete from favorite where fv_mv_id = 1 limit 1 ;
+delete from favorite where fv_mv_id = 2 limit 1 ;
 
 -- --------------------------------------------------------------------------------------------------------------------
  -- number of favourite movie items
