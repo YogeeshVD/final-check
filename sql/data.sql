@@ -75,7 +75,7 @@ values (1,1,1),
 -- ---------------------------------------------------------------------------------------------------------------------
 -- delete favourite movie
 
-delete from favorite where fv_mv_id = 2 limit 1 ;
+delete from favorite where fv_us_id = 1 and fv_mv_id = 2 limit 1 ;
 
 -- --------------------------------------------------------------------------------------------------------------------
  -- number of favourite movie items
